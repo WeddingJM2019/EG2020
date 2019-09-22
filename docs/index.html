@@ -1,9 +1,147 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>This is the title of the webpage!</title>
-  </head>
-  <body>
-    <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
-  </body>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300&display=swap" rel="stylesheet"><style>
+
+  body, html {
+    height: 100%;
+    margin: 0;
+  }
+
+  .bg {
+  /* The image used */
+  background-image: url("CIMG9900.JPG");
+
+  /* Full height */
+  height: 100%;
+
+  opacity:0.25;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+label {
+    display: block;
+    font: 50pt 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: .4rem 0;
+}
+
+input {
+  font: 50pt 'Fira Sans', sans-serif;
+  text-align: center;
+
+/* below two lines are for hiding blinking */
+  color: transparent;
+  /*text-shadow: 0 0 0 #2196f3;*/
+  text-shadow: 0 0 0 #b00606;
+}
+
+input:focus {
+    outline-width: 0;
+}
+
+input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid black;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    display: none;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 80%;
+}
+
+.codeinput {
+  display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+.headline {
+  display: block;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+width: 100%;
+}
+
+.out {
+  display: block;
+margin-left: auto;
+margin-right: auto;
+  text-align: center;
+  padding-top: 50px;
+}
+
+</style>
+
+<script type="text/javascript">
+var valid_codes=[123,456,789];
+
+function validate() {
+
+  var input_code = document.getElementById("myInput").value
+
+  /* document.getElementById("outcome").innerHTML = "wrong" */
+  document.getElementById("outcome_img").src = "img-wrong.png";
+  document.getElementById("outcome_img").alt = "WRONG";
+  document.getElementById("myInput").style.textShadow = "0 0 0 #b00606"
+
+  for (i=0; i<valid_codes.length;i++) {
+      if (valid_codes[i] == input_code) {
+        /*document.getElementById("outcome").innerHTML = "cracked"*/
+        document.getElementById("outcome_img").src = "img-right.png";
+        document.getElementById("outcome_img").alt = "RIGHT";
+        document.getElementById("myInput").style.textShadow = "0 0 0 #279301"
+      }
+  }
+
+  if (valid_codes[valid_codes.length-1] == input_code) {
+    document.getElementById("bg").style.backgroundImage = "url('PHOTO-2016-09-29-17-52-35.jpg')"
+  }
+
+  /*document.getElementById("outcome").innerHTML = input_code*/
+  /*alert(document.getElementById("myInput").value)
+  alert('You triggered an alert!');*/
+}
+</script>
+
+</head>
+<body>
+
+  <div class="bg" id="bg"></div>
+
+  <div class="container">
+
+  <label class="headline">Enter the Code:</label>
+
+  <input type="number" class="codeinput" name="a" id="myInput"
+         min="0" max="999" placeholder="000" oninput="validate()"
+         autocomplete="off" autofocus>
+
+  <div class="out">
+    <img id="outcome_img" src="img-wrong.png" alt="WRONG"/>
+  </div>
+
+</div>
+
+</body>
 </html>
