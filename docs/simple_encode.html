@@ -101,7 +101,10 @@ function encode() {
 
   var input_code = document.getElementById("myInput").value
   var encodedString = window.btoa( input_code );
+
+  var decodedString = window.atob( encodedString );
   document.getElementById("myOutput").innerHTML = encodedString
+  document.getElementById("check").innerHTML = decodedString
 
 }
 </script>
@@ -120,6 +123,9 @@ function encode() {
          autocomplete="off" autofocus>
 
   <div class="out" id="myOutput">
+  </div>
+
+  <div class="out" id="check">
   </div>
 
 </div>
