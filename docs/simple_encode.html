@@ -107,6 +107,17 @@ function encode() {
   document.getElementById("check").innerHTML = decodedString
 
 }
+
+function decode() {
+
+  var input_code = document.getElementById("myInput2").value
+  var encodedString = window.atob( input_code );
+
+  var decodedString = window.btoa( encodedString );
+  document.getElementById("myOutput").innerHTML = encodedString
+  document.getElementById("check").innerHTML = decodedString
+
+}
 </script>
 
 </head>
@@ -116,16 +127,22 @@ function encode() {
 
   <div class="container">
 
-  <label class="headline">Simple Number Encoder</label>
+  <label class="headline">Simple Encoder</label>
 
   <input type="number" class="codeinput" id="myInput"
-         oninput="encode()"
+         oninput="encode()" placeholder="0000"
          autocomplete="off" autofocus>
+
+         <label class="headline">Simple Decoder</label>
+
+<input class="codeinput" id="myInput2" placeholder="0000"
+                oninput="decode()"
+                autocomplete="off" autofocus>
 
   <div class="out" id="myOutput">
   </div>
 
-  <div class="out" id="check">
+  <!--<div class="out" id="check">-->
   </div>
 
 </div>
