@@ -104,7 +104,7 @@ margin-right: auto;
 </style>
 
 <script type="text/javascript">
-var valid_codes=[1234,4567,6789];
+var valid_codes=["MTIzNA==", "NDU2Nw==", "Njc4OQ=="]
 
 function validate() {
 
@@ -116,7 +116,7 @@ function validate() {
   document.getElementById("myInput").style.textShadow = "0 0 0 #b00606"
 
   for (i=0; i<valid_codes.length;i++) {
-      if (valid_codes[i] == input_code) {
+      if (valid_codes[i] == window.btoa(input_code)) {
         /*document.getElementById("outcome").innerHTML = "cracked"*/
         document.getElementById("outcome_img").src = "img-right.png";
         document.getElementById("outcome_img").alt = "RIGHT";
@@ -124,7 +124,7 @@ function validate() {
       }
   }
 
-  if (valid_codes[valid_codes.length-1] == input_code) {
+  if (valid_codes[valid_codes.length-1] == window.btoa(input_code)) {
     document.getElementById("bg").style.backgroundImage = "url('PHOTO-2016-09-29-17-52-35.jpg')"
   }
 
