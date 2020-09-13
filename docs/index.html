@@ -6,13 +6,9 @@
   body, html {
     height: 100%;
     margin: 0;
-
-
-
   }
 
   .bg {
-
     height: 100%;
     width: 100%;
 
@@ -105,32 +101,19 @@ margin-right: auto;
 
 <script type="text/javascript">
 var valid_codes=[
-                  "MjY1OQ==",
-                  "MTMyMw==",
-                  "MDQyOA==",
-                  "MDg1Mg==",
-                  "MjA1MQ==",
-                  "NjI1MQ==",
-                  "MjM0Mw==",
-                  "ODUyMw==",
-                  "MDM4OQ==",
-                  "NDE0Mg==",
-                  "NTAzMQ==",
-                  "NTY3OA=="  // extra code
+                  "MzQ2Nzg="  
                 ]
 
 function validate() {
 
   var input_code = document.getElementById("myInput").value
 
-  /* document.getElementById("outcome").innerHTML = "wrong" */
   document.getElementById("outcome_img").src = "img-wrong.png";
   document.getElementById("outcome_img").alt = "WRONG";
   document.getElementById("myInput").style.textShadow = "0 0 0 #b00606"
 
   for (i=0; i<valid_codes.length;i++) {
       if (valid_codes[i] == window.btoa(input_code)) {
-        /*document.getElementById("outcome").innerHTML = "cracked"*/
         document.getElementById("outcome_img").src = "img-right.png";
         document.getElementById("outcome_img").alt = "RIGHT";
         document.getElementById("myInput").style.textShadow = "0 0 0 #279301"
@@ -157,7 +140,7 @@ function validate() {
   <label class="headline">Enter the Code:</label>
 
   <input type="number" class="codeinput" name="a" id="myInput"
-         min="0" max="9999" placeholder="0000" oninput="validate()"
+         min="0" max="99999" placeholder="00000" oninput="validate()"
          autocomplete="off" autofocus>
 
   <div class="out">
