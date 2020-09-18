@@ -89,6 +89,16 @@ text-align: center;
 width: 100%;
 }
 
+.explanation {
+font-size: 15pt;
+  display: block;
+  margin-top:10px;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+width: 300px;
+}
+
 .out {
   display: block;
 margin-left: auto;
@@ -122,7 +132,7 @@ function validate() {
 
   if (valid_codes[valid_codes.length-1] == window.btoa(input_code)) {
     //document.getElementById("bg").style.backgroundImage = "url('saentis.jpg')"
-    window.open("saentis.jpg");
+    window.open("saentis-text.jpg");
   }
 
   /*document.getElementById("outcome").innerHTML = input_code*/
@@ -147,6 +157,9 @@ function validate() {
   <div class="out">
     <img id="outcome_img" src="img-wrong.png" alt="WRONG"/>
   </div>
+
+    <label class="explanation">Gemeinsam wollt ihr <i><b>grosses</b></i> schaffen, doch startet <i><b>klein</b></i> und erfreut euch
+    am Allt&auml;glichen.</label>
 
 </div>
 
